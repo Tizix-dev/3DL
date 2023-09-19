@@ -1,192 +1,145 @@
-      <!-- Start Landing Page -->
-      <div class="landing-page">
-        <header>
-          <div class="container">
-            <style>
-                   <style>
-        #contenu {
-            font-size: 16px; 
-        }
-* {
-  box-sizing: border-box;
+<h1>3DL</h1>
+<style> :root {
+  --accent: 310;
+  accent-color: hsl(var(--accent) 90% 60%);
 }
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+	display: grid;
+	place-items: center;
+	min-height: 200vh;
+	background: hsl(0 0% 0%);
+	color: hsl(0 0% 98%);
+	font-family:  "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
 }
+
+label {
+  position: fixed;
+  top: 1rem;
+  right: 2.5rem;
+  z-index: 9999;
+}
+
+[type=checkbox] {
+  position: fixed;
+  top: 1.125rem;
+  right: 1rem;
+}
+
+section {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	display: grid;
+	justify-content: start;
+	align-content: center;
+	translate: -50% 0;
+	height: 100vh;
+	width: 600px;
+	max-width: calc(100% - 4rem);
+	gap: 1rem;
+}
+
+:is(a, p) {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 400;
+	font-size: clamp(1rem, 0.75vw + 1rem, 1.25rem);
+}
+
+.actions {
+	display: flex;
+	gap: 6ch;
+	flex-wrap: wrap;
+}
+
+:is(p:nth-of-type(2), a) {
+	opacity: 0;
+	animation: fade-in both linear;
+	animation-timeline: scroll(root);
+	animation-range: 75vh 90vh;
+}
+
+p:nth-of-type(2) {
+	--opacity: 0.65;
+}
+
 a {
-  text-decoration: none;
+	display: flex;
+	gap: 1ch;
+	align-items: center;
+	color: hsl(0 0% 98%);
+	text-decoration-line: none;
 }
-ul {
-  list-style: none;
-  padding: 0;
+
+a:is(:hover, :focus-visible) {
+	text-decoration-line: underline;
+	text-decoration-thickness: 0.4ch;
+	text-underline-offset: 0.5ch;
+}
+
+a svg {
+	width: 24px;
+	stroke-width: 2;
+}
+
+@keyframes fade-in {
+	to {
+		opacity: var(--opacity, 1);
+	}
+}
+
+h1 {
+  position: fixed;
   margin: 0;
+  bottom: 1rem;
+  right: 1rem;
 }
-.container {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* Small */
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-/* Medium */
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-/* Large */
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-/* End Global Rules */
 
-/* Start Landing Page */
-.landing-page header {
-  min-height: 80px;
-  display: flex;
+p:nth-of-type(1) {;
+	font-size: clamp(1rem, 3vw + 1rem, 2rem);
+	font-weight: 600;
+	background: radial-gradient(50% 100% at 50% 100%, hsl(var(--accent, 10) 90% 95%), hsl(var(--accent, 10) 90% 50%), transparent 50%);
+	background-size: 400% 600%;
+	-webkit-background-clip: text;
+	background-position: 50% 0;
+	color: transparent;
+  opacity: 0;
+	animation: move-bg both linear, fade-in both linear;
+	animation-timeline: scroll(root);
+	animation-range: 0 100vh, 40vh 100vh;
 }
-@media (max-width: 767px) {
-  .landing-page header {
-    min-height: auto;
-    display: initial;
-  }
-}
-.landing-page header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-@media (max-width: 767px) {
-  .landing-page header .container {
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-.landing-page header .logo {
-  color: #5d5d5d;
-  font-style: italic;
-  text-transform: uppercase;
-  font-size: 20px;
-}
-@media (max-width: 767px) {
-  .landing-page header .logo {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-}
-.landing-page header .links {
-  display: flex;
-  align-items: center;
-}
-@media (max-width: 767px) {
-  .landing-page header .links {
-    text-align: center;
-    gap: 10px;
-  }
-}
-.landing-page header .links li {
-  margin-left: 30px;
-  color: #5d5d5d;
-  cursor: pointer;
-  transition: .3s;
-}
-@media (max-width: 767px) {
-  .landing-page header .links li {
-    margin-left: auto;
-  }
-}
-.landing-page header .links li:last-child {
-  border-radius: 20px;
-  padding: 10px 20px;
-  color: #FFF;
-  background-color: #6c63ff;
-}
-.landing-page header .links li:not(:last-child):hover {
-  color: #6c63ff;
-}
-.landing-page .content .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 140px;
-  min-height: calc(100vh - 80px);
-}
-@media (max-width: 767px) {
-  .landing-page .content .container {
-    gap: 0;
-    min-height: calc(100vh - 101px);
-    justify-content: center;
-    flex-direction: column-reverse;
-  }
-}
-@media (max-width: 767px) {
-  .landing-page .content .info {
-    text-align: center;
-    margin-bottom: 15px 
-  }
-}
-.landing-page .content .info h1 {
-  color: #5d5d5d;
-  font-size: 44px;
-}
-.landing-page .content .info p {
-  margin: 0;
-  line-height: 1.6;
-  font-size: 15px;
-  color: #5d5d5d;
-}
-.landing-page .content .info button {
-  border: 0;
-  border-radius: 20px;
-  padding: 12px 30px;
-  margin-top: 30px;
-  cursor: pointer;
-  color: #FFF;
-  background-color: #6c63ff;
-}
-.landing-page .content .image img {
-  max-width: 100%;
-}
-/* End Landing Page */
-            </style>
-            <a href="#" class="logo">"La 3D prend vie" : <b>3DL</b></a>
-            <div class="image">
-              <img src="https://i.postimg.cc/65QxYYzh/001234.png">
 
-                  <div id="contenu">
-        <!-- Votre contenu ici -->
-        <h1>3DL ?</h1>
-        <p>Bonjour je m'appelle Lean et je vous présente 3DL, mon entreprise qui vous propose des services 3D de toute sorte, que se soit la création de figurine sur mesure ou bien plus encore, je suis la pour ca ! </p>
-      <ul class="links">
-        <button onclick="window.location.href='https://www.rommedia.tech/3dl'">Commmandez mon service 3D !</button>
-            </ul>
-    </div>
-            
+@keyframes move-bg {
+	to { background-position: 50% 100%; }
+}
 
-    <button id="boutonAgrandir">Agrandir la page</button>
+#clipper:checked ~ section p:first-of-type {
+  -webkit-background-clip: unset;
+  outline: 4px dashed hsl(0 0% 100%);
+}
 
-    <script>
-        // JavaScript pour agrandir le contenu
-        const boutonAgrandir = document.getElementById('boutonAgrandir');
-        const contenu = document.getElementById('contenu');
-
-        boutonAgrandir.addEventListener('click', () => {
-            const taillePoliceActuelle = window.getComputedStyle(contenu).fontSize;
-            const nouvelleTaillePolice = (parseFloat(taillePoliceActuelle) * 3.3) + 'px'; // Augmente la taille de 20%
-
-            contenu.style.fontSize = nouvelleTaillePolice;
-        });
-    </script>
-                  
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Landing Page -->
+p:first-of-type {
+  transition: all 0.2s;
+}
+</style>
+<section>
+  <p>
+    Bonjour, je me présente, Lean. 
+    Je suis un designer 3D ! 
+    Je possède à mon bureaux de nombreux outils efficaces pour vous concevoir le top du top !
+    Que se soit des figurines, des dessin, des modèle ou plus encore, je suis capable de malgré tout vous présentez tout dans l'élégance.
+  </p>
+    </a>
+    <a href="https://rommedia.tech/3dl" target="_blank" rel="noreferrer noopener"><span>Commandez un service 3D !</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+      </svg>
+    </a>
+  </div>
+</section>
