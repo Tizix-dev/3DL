@@ -157,28 +157,20 @@ ul {
 /* End Landing Page */
             </style>
             <a href="#" class="logo">"La 3D prend vie" : <b>3DL</b></a>
-            <ul class="links">
-        <button onclick="window.location.href='https://www.rommedia.tech/3dl'">Commmandez mon service 3D !</button>
-            </ul>
-          </div>
-        </header>
-        <div class="content">
-          <div class="container">
-            <div class="info">
-              <h1>3DL, Disponbile en France et en Belgique </h1>
-              <p>Besoin d'un service qui recouvre la 3D ? Je suis la pour ca ! Je m'appelle Lean et je suis un jeune Free-lance qui peut vous offrir les meilleurs services 3D qui soit, mon bureaux est dotée d'imprimante 3D ainsi que de logiciels haut de gammes</p>
-              <button>Découvre mes services dés maitenant !</button>
-            </div>
             <div class="image">
               <img src="https://i.postimg.cc/65QxYYzh/001234.png">
 
                   <div id="contenu">
         <!-- Votre contenu ici -->
-        <h1>Titre</h1>
-        <p>Ceci est un exemple de contenu à agrandir.</p>
+        <h1>3DL ?</h1>
+        <p>Bonjour je m'appelle Lean et je vous présente 3DL, mon entreprise qui vous propose des services 3D de toute sorte, que se soit la création de figurine sur mesure ou bien plus encore, je suis la pour ca ! </p>
+      <ul class="links">
+        <button onclick="window.location.href='https://www.rommedia.tech/3dl'">Commmandez mon service 3D !</button>
+            </ul>
     </div>
+            
 
-    <button id="boutonAgrandir">Agrandir le contenu</button>
+    <button id="boutonAgrandir">Agrandir la page</button>
 
     <script>
         // JavaScript pour agrandir le contenu
@@ -187,7 +179,7 @@ ul {
 
         boutonAgrandir.addEventListener('click', () => {
             const taillePoliceActuelle = window.getComputedStyle(contenu).fontSize;
-            const nouvelleTaillePolice = (parseFloat(taillePoliceActuelle) * 1.2) + 'px'; // Augmente la taille de 20%
+            const nouvelleTaillePolice = (parseFloat(taillePoliceActuelle) * 3.3) + 'px'; // Augmente la taille de 20%
 
             contenu.style.fontSize = nouvelleTaillePolice;
         });
